@@ -2674,18 +2674,26 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var i18next__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
 
 
+const en = {
+  translation: {
+    hello_world: "hello world",
+    nested: {
+      key: "This key is was read from nested object",
+    },
+    great: "Hello {{name}}",
+  },
+};
+
 i18next__WEBPACK_IMPORTED_MODULE_0__.default.init({
     lng: "en", // if you're using a language detector, do not define the lng option
     resources: {
-      en: {
-        translation: {
-          hello_world: "hello world",
-        },
-      },
+      en,
     },
   })
   .then((t) => {
-    console.log(t("hello_world")); // -> same as i18next.t
+    console.log(t("hello_world"));
+    console.log(t("nested.key"));
+    console.log(t("great", { name: "Marcin" }));
   });
 
 })();
