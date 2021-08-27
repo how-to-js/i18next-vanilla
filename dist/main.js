@@ -2674,21 +2674,43 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var i18next__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
 
 
+window.i18next = i18next__WEBPACK_IMPORTED_MODULE_0__.default;
+
 const en = {
-  translation: {
-    hello_world: "hello world",
-    nested: {
-      key: "This key is was read from nested object",
+    translation: {
+      hello_world: "hello world",
+      nested: {
+        key: "This key is was read from nested object",
+      },
+      great: "Hello {{name}}",
     },
-    great: "Hello {{name}}",
   },
-};
+  pl = {
+    translation: {
+      hello_world: "Witaj świecie",
+      nested: {
+        key: "Ten klucz został odczytany z zagnieżdzonego obiektu",
+      },
+      great: "Witaj {{name}}",
+    },
+  },
+  es = {
+    translation: {
+      hello_world: "Hola mundo",
+      nested: {
+        key: "Esta clave se ha leído desde un objeto anidado",
+      },
+      great: "Hola {{name}}",
+    },
+  };
 
 i18next__WEBPACK_IMPORTED_MODULE_0__.default.init({
-    lng: "en", // if you're using a language detector, do not define the lng option
     resources: {
       en,
+      pl,
+      es,
     },
+    fallbackLng: "en",
   })
   .then((t) => {
     console.log(t("hello_world"));
